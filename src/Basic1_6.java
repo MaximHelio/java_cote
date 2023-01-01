@@ -1,28 +1,33 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Basic1_6 {
-    public static void main(String[] args) {
-        int[] possible = {1, 7};
-        int[] arr = new int[7];
-        for (int i = 0; i < 7; i++) {
-            int index = (int)(Math.random()*2);
-            arr[i] = possible[index];
-        }
-        String result = "";
-        int cnt = 0;
-        for (int i = 0; i < 4; i++) {
-            if(arr[i] == 7 && arr[i+1]==7 && arr[i+2]==7){
-                 cnt++;
+    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Scanner sc = new Scanner(System.in);
+        int turn = 1;
+        while(true){
+            String answer = Integer.toString(turn);
+
+            for (int i = 0; i < answer.length(); i++) {
+                if( answer.charAt(i) == '3'
+                || answer.charAt(i) == '6'
+                || answer.charAt(i) == '9') {
+                    answer = "짝";
+                    break;
+                }
             }
+
+            String input = sc.next();
+
+            if ( answer.equals(input) == false )
+            {
+                break;
+            }
+            turn++;
         }
-        if(cnt > 0) {
-            result = "당첨";
-        }else{
-            result = "꽝";
-        }
-        for (int num: arr) {
-            System.out.print(num + " ");
-        }
-        System.out.println(": " + result);
+
     }
 }

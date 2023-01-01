@@ -7,8 +7,10 @@ public class Basic2_5 {
         int num = sc.nextInt();
         System.out.print("공차: ");
         int d = sc.nextInt();
-        for (int i = num; i < num+ 9*d+1; i=i+d) {
-            System.out.print(i+" ");
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print(num + d*i +" ");
         }
+
     }
 }
