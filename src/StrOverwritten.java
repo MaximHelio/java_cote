@@ -6,10 +6,14 @@ public class StrOverwritten {
         String my_string = sc.next();
         String overwrite_string = sc.next();
         int s = sc.nextInt();
-        String answer = "";
-        for (int i = s; i < s+overwrite_string.length(); i++) {
-            answer +=
-        }
 
+        char[] my_string_arr = new char[my_string.length()];
+        char[] overwrite_string_arr = new char[overwrite_string.length()];
+//        for (int i = 0; i < overwrite_string.length(); i++) {
+//            my_string_arr[s+i] = overwrite_string_arr[i];
+//        }
+        for (int i = 0; i < my_string.length(); i++) {
+            System.out.println(my_string_arr[i]);
+        }
     }
 }
